@@ -1,0 +1,131 @@
+.falling-leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.falling-leaf::before {
+  content: '🍂';
+  font-size: 20px;
+  position: absolute;
+  animation: fall 8s linear infinite;
+}
+
+.falling-leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+.falling-leaf:nth-child(2) { left: 20%; animation-delay: 1s; }
+.falling-leaf:nth-child(3) { left: 30%; animation-delay: 2s; }
+.falling-leaf:nth-child(4) { left: 40%; animation-delay: 3s; }
+.falling-leaf:nth-child(5) { left: 50%; animation-delay: 4s; }
+.falling-leaf:nth-child(6) { left: 60%; animation-delay: 5s; }
+.falling-leaf:nth-child(7) { left: 70%; animation-delay: 6s; }
+.falling-leaf:nth-child(8) { left: 80%; animation-delay: 7s; }
+.falling-leaf:nth-child(9) { left: 90%; animation-delay: 8s; }
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.pressed-flower {
+  position: relative;
+  overflow: hidden;
+}
+
+.pressed-flower::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23D2691E" opacity="0.1"/><circle cx="25" cy="25" r="1.5" fill="%23B22222" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="%2387A96B" opacity="0.1"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.moon-glow {
+  box-shadow: 0 0 50px rgba(255, 219, 88, 0.3);
+}
+
+.dark .moon-glow {
+  box-shadow: 0 0 50px rgba(255, 219, 88, 0.6);
+}
+
+.leaf-border {
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path d="M0,5 Q25,0 50,5 T100,5" stroke="%23D2691E" stroke-width="2" fill="none"/></svg>') 2;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D2691E;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #B22222;
+}
+
+.sparkle {
+  position: relative;
+  overflow: hidden;
+}
+
+.sparkle::after {
+  content: '✨';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  animation: pulse-slow 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.harvest-gradient {
+  background: linear-gradient(135deg, #FFE4B5 0%, #D2691E 50%, #8B4513 100%);
+}
+
+.autumn-leaves-bg {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(210, 105, 30, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(178, 34, 34, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(135, 169, 107, 0.1) 0%, transparent 50%);
+}
